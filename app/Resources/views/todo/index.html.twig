@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<nav>
+            <div class="container">
+ 
+           <p> Bienvenue ci dessous la liste de nos insectes  </p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>famille</th>
+        <th>race</th>
+        <th>nourriture</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+        {% for User in todos %}
+      <tr>
+          <th scope="row">{{User.id}}</th>
+        <td>{{User.nom}}</td>
+        <td>{{User.famille}}</td>
+        <td>{{User.nourriture}}</td>
+        <td>{{User.race}}</td>
+        
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</nav>
+ 
+            
+                
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+   
+    body { background: #FFF0F5; font: 18px/1.5 sans-serif; padding-top:  5px }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    table {
+border: medium solid #D87093;
+border-collapse: collapse;
+width: 50%;
+}
+th {
+font-family: monospace;
+border: thin solid #D87093;
+width: 50%;
+padding: 5px;
+background-color: #FFB6C1;
+background-image: url(sky.jpg);
+}
+td {
+font-family: sans-serif;
+border: thin solid #D87093;
+width: 50%;
+padding: 5px;
+text-align: center;
+background-color: #ffffff;
+}
+caption {
+font-family: sans-serif;
+}
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p {  color: #C71585 ; margin: 0 0 1em 0; }
+    a { color:#8B4513; }
+    a:hover { text-decoration: none; }
+    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
+    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+    #container { padding: 2em; }
+    #welcome, #status { margin-bottom: 2em; }
+    #welcome h1 span { display: block; font-size: 75%; }
+    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+    #icon-book { display: none; }
+
+  
+   
+</style>
+{% endblock %}
